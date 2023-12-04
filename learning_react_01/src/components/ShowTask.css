@@ -1,0 +1,29 @@
+.todoContainer {
+    margin: 10vh 0 10vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todosubContainer {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todoHeader {
+    width: 50vw;
+    padding: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.completed {
+    box-shadow: rgb(106, 255, 0) 0px 1px 4px;
+}
+
+li.incomplete {
+    box-shadow: rgb(255, 0, 8) 0px 1px 4px;
+}

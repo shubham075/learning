@@ -1,0 +1,6 @@
+node_modules
+.env
+firebase-debug.log
+firebaseToken.json
+messaging_get_token.js
+temp.js

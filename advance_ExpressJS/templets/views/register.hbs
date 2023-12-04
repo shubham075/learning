@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="./css/register.css">
+
+</head>
+<body>
+    <div id="bg"></div>
+
+    <div class="form-box">
+        <form name="reg-form" onsubmit="return formValidation()" method="post">
+
+            <div class="form-field" id="name">
+                <input type="name" name="username" placeholder="full name"><b><span class="formerror">
+                    </span></b>
+            </div>
+
+            <div class="form-field" id="email">
+                <input type="email" name="email" placeholder="email"><b><span class="formerror">
+                    </span></b>
+            </div>
+
+            <div class="form-field" id="contact">
+                <input type="contact" name="contact" placeholder="contact"><b><span class="formerror">
+                    </span></b>
+            </div>
+
+            <div class="form-field" id="password">
+                <input type="password" name="password" placeholder="password"><b><span class="formerror">
+                    </span></b>
+            </div>
+
+            <div class="form-field" id="confirm-password">
+                <input type="password" name="confirmPassword" placeholder="confirm-password"><b><span class="formerror">
+                    </span></b>
+            </div>
+
+            <div class="form-field">
+                <button class="btn">Register</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+<script src="./src/register.js"></script>
+
+</html>

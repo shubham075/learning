@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light pt-0 pb-0">
+    <div class="container d-flex justify-content-start">
+        <a class="fa-solid fa-xl p-4" href="/home">
+            fussion_forum
+        </a>
+        <div class="navbar-collapse offcanvas-collapse">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item p-1">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <i class="fa-solid fa-house-chimney-user">&nbsp;Home</i>
+                    </a>
+                </li>
+                <li class="nav-item p-1">
+                    <a class="nav-link" href="#"><i class="fa-sharp fa-solid fa-bell">&nbsp;notifications</i></a>
+                </li>
+                <li class="nav-item p-1">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-newspaper">&nbsp;daily feeds</i></a>
+                </li>
+            </ul>
+
+            <div class="dropdown fa-solid">
+                <button class="btn btn-sm btn-light dropdown-toggle d-flex align-items-center" type="button"
+                    id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+                    <img src={{user_data.avtarImage}} alt="User" class="rounded-circle me-2"
+                        style="width: 40px; height: 40px;">
+                    <div>
+                        <h6 class="mb-0">{{user_data.name}}</h6>
+                        <small class="fa-xs">small action content</small>
+                    </div>
+                </button>
+                <nav class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a href="/profile" class="dropdown-item">
+                        <div id="header-content" class="p-2">
+                            <img src={{user_data.avtarImage}} alt="avatar" class="rounded-circle img-fluid mb-3"
+                                style="max-width: 50px;">
+                            <h4>
+                                <span style="white-space: nowrap;"><i
+                                        class="fa-sharp fa-solid">{{user_data.name}}</i></span>
+                            </h4>
+                            <p><i class="fa-solid">{{user_data.email}}</i></p>
+                        </div>
+                    </a>
+                    <li><a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-message">&nbsp; Messages</i>
+                        </a></li>
+                    <li><a class="dropdown-item" href="#">
+                            <i class="fa-sharp fa-solid fa-chart-column">&nbsp;content & stats</i>
+                        </a></li>
+                    <li><a class="dropdown-item" href="/bookmark">
+                            <i class="fa-solid fa-bookmark">&nbsp; Bookmarks</i>
+                        </a></li>
+                    <li><a class="dropdown-item" href="/logout">
+                            <i class="fa-solid fa-right-from-bracket">&nbsp;Logout</i>
+                        </a></li>
+                </nav>
+            </div>
+        </div>
+    </div>
+</nav>

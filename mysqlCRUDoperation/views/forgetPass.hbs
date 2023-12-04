@@ -1,0 +1,32 @@
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+
+<div class="row">
+    <div class="col-6">
+        <h1>Admin Login</h1>
+    </div>
+</div>
+
+<form class="row g-3 needs-validation" method="post" novalidate>
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" name="forgetEmail" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput validationServer01">Email address</label>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please provide a valid Email-Id.
+        </div>
+        <div class="col-12 mt-5">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <a href="/loginform" type="button" class="btn btn-primary align-self-center">Back to login</a>
+        </div>
+    </div>
+</form>

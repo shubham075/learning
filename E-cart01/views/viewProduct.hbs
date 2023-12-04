@@ -1,0 +1,157 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light pt-0 pb-0">
+    <div class="container d-flex justify-content-start">
+        <a class="navbar-brand" href="/admin/home">
+            <img src="https://freshcart.codescandy.com/assets/images/logo/freshcart-logo.svg" alt="" width="300"
+                height="50" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-conthols="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex">
+                <input class="form-conthol rounded-3 me-2" style="width: 50rem;" type="search" placeholder="Search">
+                <button class="btn btn-success me-5" type="submit" style="width: 3rem;">
+                    <i class='bx bx-search-alt bx-tada'></i></button>
+            </form>
+            <div class="dropdown">
+                <button class="btn btn-success me-3" data-bs-toggle="dropdown" style="width: 3rem;">
+                    <i class='bx bx-user'></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Cart</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                </ul>
+            </div>
+            <a href="/admin/logout" class="btn btn-success" style="width: 3rem;">
+                <i class='bx bx-log-out bx-flip-vertical'></i>
+            </a>
+
+        </div>
+    </div>
+</nav>
+
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="container">
+
+    <div class="row" style="margin-top: 12vh;">
+
+        <div class="col-md-4">
+            <form action="/admin/viewProduct" method="post" class="d-flex">
+                <select class="form-select" name="productCategory" id="floatingSelectGrid">
+                    <option value="none"></option>
+                    <option value="dairy">Dairy Products</option>
+                    <option value="grains">Grain Products</option>
+                    <option value="books">Books</option>
+                    <option value="meats">Meat Products</option>
+                </select>
+                &nbsp;
+                &nbsp;
+                <button class="btn btn-success me-5" type="submit">Next</button>
+            </form>
+        </div>
+        {{!-- search box --}}
+
+        {{#if category}}
+        <div class="col-md-8">
+            <form action="/admin/viewProduct/search/{{category}}" method="get" class="col-md-5 d-flex float-end">
+                <input type="search" class="form-control" name="search" aria-placeholder="Search product Name">
+                &nbsp;
+                &nbsp;
+                <button class="btn btn-success me-5" type="submit" style="width: 3rem;">
+                    <i class='bx bx-search-alt'></i></button>
+            </form>
+        </div>
+        {{/if}}
+    </div>
+    <div class="row mt-4">
+        <div class="col d-flex justify-content-center">
+            <table class="table table-info table-responsive" id="productTable">
+                {{!-- style="visibility: hidden;" --}}
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        {{!-- <th>Category</th> --}}
+                        <th>Product Name</th>
+                        {{!-- <th>Description</th> --}}
+                        {{!-- <th>Image Url</th> --}}
+                        <th>Discount Value</th>
+                        <th>Price</th>
+                        <th>Size</th>
+                        <th>Stock value</th>
+                        <th>Avaliblity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                    <tr>
+                        <td>{{this.id}}</td>
+                        {{!-- <td>{{this.productCategory}}</td> --}}
+                        <td>{{this.productName}}</td>
+                        {{!-- <td>{{this.productDescription}}</td> --}}
+                        {{!-- <td>{{this.productImage}}</td> --}}
+                        <td>{{this.discountValue}}</td>
+                        <td>{{this.productPrice}}</td>
+                        <td>{{this.productSize}}</td>
+                        <td>{{this.stockValue}}</td>
+                        <td>{{this.isAvaliable}}</td>
+                        <td>
+                            <a href="/admin/edit/{{this.productCategory}}/{{this.id}}" type="button"
+                                class="btn btn-primary btn-small"><i class="bi bi-eye"></i>Edit</a>
+
+                            <a href="/admin/delete/{{this.productCategory}}/{{this.id}}" type="button"
+                                class="btn btn-danger">Delete</a>
+                            {{!-- <button class="btn btn-danger"
+                                onclick="delUser({{this.productCategory}},{{this.id}})">Delete</button> --}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function openTable() {
+        let table = document.getElementById("floatingSelectGrid");
+        if (table.value == "none") {
+            document.getElementById("productTable").style.visibility = "hidden";
+        }
+        else {
+            document.getElementById("productTable").style.visibility = "visible";
+        }
+    }
+
+    function ddelUser(category, id) {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this Records!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Your records has been deleted!", {
+                        icon: "success",
+                    })
+                    let url = `/admin/delete/${category}/${id}`;
+                    location.href = url;
+                } else {
+                    swal("Your records is safe!");
+                }
+            });
+
+    }
+</script>

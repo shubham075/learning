@@ -1,0 +1,6 @@
+{
+    "task" : ["learn JavaScript", "learn Express", "learn nodeJS"],
+    "taskOne":"learn JavaScript",
+    "taskTwo":"learn Node JS",
+    "taskThree":"learn Express JS"
+}

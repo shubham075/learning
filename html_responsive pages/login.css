@@ -1,0 +1,137 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background: #F3F4F9;
+}
+
+.login-header{
+    height: 14.8vh;
+    background: transparent linear-gradient(180deg, #211F1F 0%, #3B3939 100%) 0% 0% no-repeat padding-box;
+}
+
+.login-header-img{
+    width: 14.11vw;
+    height: 6.66vh;
+}
+
+@media screen and (max-width:1100px) {
+    .login-header-img{
+        width: 26.11vw;
+        height: 6.66vh;
+    }
+}
+@media screen and (max-width:450px) {
+    .login-header-img{
+        width: 45.11vw;
+        height: 6.66vh;
+    }
+}
+
+.hr{
+    width: 100vw;
+    height: 1.85vh;
+    background: #FE077C 0% 0% no-repeat padding-box;
+}
+
+.login-outer-box{
+    width: 37.65vw;
+    height: 68.05vh;
+    margin-top: 1.625em;
+}
+.login-form-box{
+    width: 29.32vw;
+    height: 53.24vh;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 14px #0000001A;
+    border-radius: 20px;
+}
+
+.login-form-inner-box{
+    width: 20.98vw;
+    height: 38.42vh;
+}
+
+.login-txt{
+    /* width: 20.6875vw;
+    height: 4.44vh; */
+    text-align: center;
+    font: normal normal bold 2.25em Roboto;
+    letter-spacing: 0px;
+    color: #29292B;
+}
+
+.login-small-txt{
+    margin-top: 1.48vh;
+    /* width: 20.98vw;
+    height: 4.87vh; */
+    text-align: center;
+    font: normal normal normal 1.125em Roboto;
+    letter-spacing: 0px;
+    color: #2A2F4D;
+}
+
+#email{
+    margin-top: 2.22vh;
+    width: 20.93vw;
+    height: 4.62vh;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 0.5px solid #7D86A9;
+    border-radius: 2.31vh;
+}
+#password{
+    margin-top: 2.96vh;
+    width: 20.93vw;
+    height: 4.62vh;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 0.5px solid #7D86A9;
+    border-radius: 2.31vh;
+}
+
+.form-text{
+    font-size: 0.9375em;
+    letter-spacing: 0px;
+    color: #7D86A9;
+    font-family: Roboto-Medium;
+}
+
+.login-btn{
+    margin-top: 4.44vh;
+    width: 20.93vw;
+    height: 5.18vh;
+    background: #FE077C 0% 0% no-repeat padding-box;
+    border: 0.5px solid #7D86A9;
+    border-radius: 2.59vh;
+}
+
+.login-btn-txt{
+    text-align: center;
+    font: normal normal bold 1.0625em Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width:950px){
+    .login-form-inner-box{
+        width: 51.98vw;
+        height: 42.42vh;
+    }
+    .login-outer-box {
+        width: 81.65vw;
+    }
+    .login-form-box{
+        width: 73.32vw;
+        height: 63.24vh;
+    }
+    #email{
+        width: 51.93vw;
+    }
+    #password{
+        width: 51.93vw;
+    }
+    .login-btn{
+        width: 51.93vw;
+    }
+    
+}
+

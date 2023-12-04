@@ -1,0 +1,159 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background: #F3F4F9;
+}
+
+.login-header{
+    height: 14.8vh;
+    background: transparent linear-gradient(180deg, #211F1F 0%, #3B3939 100%) 0% 0% no-repeat padding-box;
+}
+
+.login-header-img{
+    width: 14.11vw;
+    height: 6.66vh;
+}
+
+@media screen and (max-width:1100px) {
+    .login-header-img{
+        width: 30.11vw;
+        height: 6.66vh;
+    }
+}
+@media screen and (max-width:450px) {
+    .login-header-img{
+        width: 45.11vw;
+        height: 6.66vh;
+    }
+}
+
+.hr{
+    width: 100vw;
+    height: 1.85vh;
+    background: #FE077C 0% 0% no-repeat padding-box;
+}
+
+.otp-outer-box{
+    margin-top: 2.4vh;
+    width: 37.65vw;
+    height: 54.90vh;
+}
+
+.otp-container{
+    width: 29.32vw;
+    height: 40.09vh;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 14px #0000001A;
+    border-radius: 1.85vh;
+}
+
+.otp-txt{
+    margin-top: 7.4vh;
+    /* height: 4.44vh; */
+    text-align: center;
+    font: normal normal bold 2.25em Roboto;
+    letter-spacing: 0px;
+    color: #29292B;
+}
+
+.otp-small-txt{
+    width: 29.32vw;
+    /* height: 4.44vh; */
+    text-align: center;
+    font: normal normal normal 1.125em Roboto;
+    letter-spacing: 0px;
+    color: #2A2F4D;
+}
+
+.otp-change-txt{
+    text-align: center;
+    font: normal normal normal 1.125em Roboto;
+    letter-spacing: 0px;
+    color: #FE077C;
+}
+
+.otp-box-1{
+    border-bottom: 2px solid black;
+    height: 6vh;
+    width: 2.4vw;
+}
+
+.login-btn{
+    margin-top: 2.22vh;
+    width: 20.93vw;
+    height: 5.18vh;
+    background: #FE077C 0% 0% no-repeat padding-box;
+    border: 0.5px solid #7D86A9;
+    border-radius: 2.59vh;
+}
+
+.login-btn-txt{
+    text-align: center;
+    font: normal normal bold 1.0625em Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.otp-xsmall-txt1{
+    margin-left: 6.35vw;
+    margin-top: 1.66vh;
+}
+
+.otp-xsmall-txt2{
+    margin-right: 6.30vw;
+    margin-top: 1.66vh;
+}
+
+@media screen and (max-width:1050px) and (min-width:700px) {
+    .otp-outer-box {
+        width: 57.65vw;
+    }  
+    .otp-container, .otp-small-txt, .login-btn {
+        width: 42.32vw;
+    }
+
+}
+@media screen and (max-width:800px) and (min-width:450px) {
+    .otp-container, .otp-small-txt, .login-btn {
+        width: 65.32vw;
+    }
+    .otp-outer-box{
+        width: 82.65vw;
+    }
+    .otp-box-1{
+        width: 4.4vw;
+    }
+    
+}
+@media screen and (max-width:450px) {
+    .otp-container, .otp-small-txt, .login-btn {
+        width: 85.32vw;
+    }
+    .otp-container{
+        height: 48.09vh;
+    }
+    .otp-outer-box{
+        width: 89.65vw;
+    }
+    .otp-box-1{
+        width: 6vw;
+    }
+    
+    
+    
+}
+@media screen and (max-width:450px) and (max-height:600px) {
+    .otp-outer-box {
+        width: 89.65vw;
+        height: 66.9vh;
+    }
+    .otp-box-1 {
+        height: 6vh;
+        width: 8.4vw;
+    }
+    .otp-container{
+        width: 86.32vw;
+        height: 67.09vh;
+
+}

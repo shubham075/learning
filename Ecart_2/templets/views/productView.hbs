@@ -1,0 +1,45 @@
+{{>header}}
+
+
+<div class="container mt-4">
+    <div class="row g-4 row-cols-xl-4 row-cols-lg-3 row-cols-2 row-cols-md-2 mt-2">
+        <!-- col -->
+        {{#each data}}
+        <div class="col">
+            <!-- card -->
+            <div class="card card-product">
+                <div class="card-body">
+
+                    <!-- badge -->
+                    <div class="text-center">
+                        <div class=" position-absolute top-0 start-0">
+                            <span class="badge bg-danger">5 % Off</span>
+                        </div>
+                        {{!-- <a href="/users/viewproduct/{{this.id}}"> --}}
+                            <a href="/products/{{this.id}}">
+                                <img src={{this.image}} alt="Grocery" class="mb-3" height="150vh"></a>
+                    </div>
+
+                    <h2 class="fs-6"><a href="#" class="text-inherit text-decoration-none">{{this.name}} - {{productData.[0].size}}</a></h2>
+                    <!-- price -->
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <div>
+                            {{!-- {{#each productData}} --}}
+                            <span class="text-decoration-line-through">${{productData.[0].price}}</span>
+                            {{!-- <span class="text-dark">${{this.finalPrice}}</span> --}}
+                            {{!-- {{/each}} --}}
+                        </div>
+                        <!-- btn for add to cart-->
+                        <div><a href="#" class="btn btn-success">
+                                <i class='bx bxs-cart-add bx-tada'></i>
+                                Add
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

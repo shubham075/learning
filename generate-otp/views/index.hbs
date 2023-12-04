@@ -1,0 +1,26 @@
+<div class="container">
+    <div style="height: 20vh;"></div>
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-4">
+            <form action="/sendOTP" method="get">
+                <!-- Name input -->
+                <div class="form-outline mb-4">
+                    <input type="tel" id="input_one" name="p_number" class="form-control" required/>
+                    <label class="form-label" for="input_one">Phone Number</label>
+                </div>
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                    <input class="form-check-input me-2" name="ok" type="checkbox" value="" id="form5Example3" required/>
+                    <label class="form-check-label" for="form5Example3">
+                        I have read and agree to the terms
+                    </label>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">Get OTP</button>
+            </form>
+
+        </div>
+    </div>
+
+</div>

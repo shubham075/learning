@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-md position-sticky">
+    <div class="container-fluid">
+        <!-- <img src="public/assets/images/google-meet-icon.png" alt="" height="43"> -->
+        <i class="fa-brands fa-squarespace fa-beat p-2"></i>
+        <a class="navbar-brand fa-solid" href="#">meet_space</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">At a glance</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">How it works</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Plan and Price</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav mr-0 d-flex justify-content-center align-items-center">
+                <li class="nav-item p-2">
+                    <a href="#" class="nav-link display-center">Sign in</a>
+                </li>
+                <li class="nav-item p-2">
+                    <button class="btn btn-outline-secondary btn-lg text-info font-weight-bold" id="join-meeting">Join
+                        the
+                        meeting</button>
+                </li>
+                <li class="nav-item p-2">
+                    <button class="btn btn-lg btn-info text-light font-weight-bold new-meeting">Start a
+                        meeting</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="jumbotron h-100 d-flex mt-4">
+        <div class="container w-50">
+            <h1 class="" style="font-size: 3rem; padding: 0 20px;"> Premium video meeting. Now it is available for
+                free to
+                everyone. </h1>
+            <p class="" style="font-size: 20px; padding: 0 20px;">
+                We're redesigning the Google Meet service for secure business meetings and making it free for
+                everyone to use.
+            </p>
+            <ul class="d-flex" style="margin-left: 3vw;">
+                <li class="p-2 ">
+                    <button class="btn btn-lg btn-success new-meeting">
+                        <i class="fa-solid fa-video-plus"></i>
+                        New Meeting
+                    </button>
+                </li>
+                <li class="p-2">
+                    <button class="btn btn-outline-secondary text-dark font-weight-bold display-center"
+                        style="background-color: #ffffff;">
+                        <i class="fa-solid fa-keyboard"></i>
+                        <input type="text" name="meetingID" id="enter-code" placeholder="Enter a code"
+                            style="border: none;" class="form-control">
+                    </button>
+                </li>
+                <li class="cursor-pointer display-center" id="join-action">Join</li>
+            </ul>
+        </div>
+        <div class="container w-50">
+            <img src="/images/google-meet-people.jpg" alt="" class="signin-image">
+        </div>
+    </div>
+</main>
+
+<script>
+    document.querySelector('#join-meeting').addEventListener('click', () => {
+        document.querySelector('#enter-code').focus();
+    });
+    document.querySelector('#join-action').addEventListener('click', () => {
+        const code_value = document.getElementById('enter-code').value;
+        const newMeeting_url = `${window.location.origin}?meetingID=${code_value}`;
+        window.location.replace(newMeeting_url);
+    });
+    const new_meeting = document.querySelectorAll(".new-meeting");
+    for (const element of new_meeting) {
+        element.addEventListener('click', () => {
+            const code_value = Math.floor(Math.random() * 10000);
+            const newMeeting_url = `${window.location.origin}?meetingID=${code_value}`;
+            window.location.replace(newMeeting_url);
+        });
+    }
+
+</script>

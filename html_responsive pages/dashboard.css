@@ -1,0 +1,233 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background: #F3F4F9;
+}
+
+#event-header{
+    height: 9.62vh;
+    background: transparent linear-gradient(180deg, #211F1F 0%, #3B3939 100%) 0% 0% no-repeat padding-box;
+}
+
+#dashboard-header-img1{
+    width: 215px;
+    height: 56px;
+    margin-left: 7.29vw;
+}
+
+.notification{
+    height: 6.1vh;
+    width: 3vw;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.right-section{
+    float: right;
+    margin-right: 7.29vw;
+}
+
+.profile-box{
+    margin-left: 2.34vw;
+    display: inline-block;
+    width: 9.79vw;
+    height: 45px;
+}
+
+.profile-name{
+    margin-top: 4px;
+    margin-left: 15px;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.profile-deg{
+    margin-top: 2.31vh;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+.drop-color{
+    background: transparent linear-gradient(180deg, #211F1F 0%, #3B3939 100%) 0% 0% no-repeat padding-box;
+    border: hidden;
+}
+
+/* navigation bar css */
+.navbar1{
+    width: 275px;
+    height: 976px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 14px #0000001A;
+    opacity: 1;
+}
+.item-container{
+    margin: 0;
+    padding: 0;
+}
+.nav-item{
+    height: 40px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    margin-top: 20px;
+}
+.nav-img{
+    /* height: 18px; */
+    margin-left: 20px;
+    margin-top: 9px;
+}
+.nav-txt{
+    /* height: 24px; */
+    margin-left: 20px;
+    margin-top: 9px;
+    text-align: left;
+    font: normal normal normal 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #000000;
+}
+
+.nav-item.active{
+     color: #FE077C;
+     border-left: 3px solid #FE077C;
+}
+.popout:hover{
+    animation: moves ease-out 3s;
+}
+.nav-txt:hover{
+    color: #FE077C;;
+}
+@keyframes moves{
+    50%{background-color: skyblue;}
+}
+/* @keyframes move1{
+    100%{color: #FE077C;}
+} */
+/* nested row css */
+.report-txt{
+    font-size: 2em;
+    font-family: Roboto-Medium;
+    margin-top: 40px;
+    height: 43px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #202020;
+}
+.first-card{
+    width: 260px;
+    height: 110px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 12px #0000000F;
+    border-radius: 10px;
+}
+.box-txt{
+    display: block;
+    margin-top: 20px;
+    margin-left: 30px;
+    height: 43px;
+    text-align: left;
+    font: normal normal bold 32px/43px Roboto;
+    letter-spacing: 0px;
+    color: #202020;
+}
+.small-box-txt{
+    margin-top: 6px;
+    margin-left: 30px;
+    height: 21px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #202020;
+}
+.piechart-card{
+    width: 686px; 
+    height: 480px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 12px #0000000F;
+    border-radius: 10px;
+}
+.download-card{
+    width: 359px;
+    height: 220px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 14px #0000001A;
+    border-radius: 10px;
+}
+.piechart{
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background-image: conic-gradient(#92B4EC 0 120deg, #5FD068 120deg 240deg, #F24C4C  120deg 240deg);
+}
+
+.piechart-label{
+    margin-top: 20px;
+    margin-left: 20px;
+    font: 18px;
+    font-weight: medium;
+    width: 178px;
+    height: 24px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #202020;
+}
+.pie-legend{
+    height: 93px;
+}
+.download-card-txt{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: #202020;
+    font-size: 18px;
+    font-weight: Medium;
+}
+.right{
+    float: right;
+    margin-right: 17px;
+}
+.btn{
+    border: none;
+    background-color: none;
+    margin: 0;
+    padding: 0;
+}
+.polyline-img{
+    margin-top: 32px;
+    width: 13.85vw;
+    height: 85px;
+}
+.months{
+    margin-top: 22px;
+    justify-content: space-evenly;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #7D86A9;
+    font: normal normal normal 14px SFProText-Regular;
+}
+.dropdown-item.active{
+    background-color: #FFFFFF;
+    color: #FE077C;
+}
+.dropdown-item{
+    font-size: 14px;
+}
+.card{
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+

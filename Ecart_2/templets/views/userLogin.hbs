@@ -1,0 +1,42 @@
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col d-flex justify-content-center align-items-center">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Login</h2>
+                    <p class="card-text">Please enter your email id and password</p>
+
+                    <form action="/login" method="post">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                            {{#if err.email}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.email}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="password">
+                            {{#if err.password}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.password}}</p>
+                            {{/if}}
+                        </div>
+                        <button type="submit" class="btn btn-danger mt-3">login</button>
+                        <a href="/register" type="submit" class="btn btn-danger mt-3">New User</a>
+                        <div class="mt-2">
+                            <a href="#" class="btn btn-primary mt3"><i class='bx bxl-google'></i> &nbsp Google</a>
+                            <a href="#" class="btn btn-success mt3"><i class='bx bxl-spotify'></i> &nbsp spotify</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

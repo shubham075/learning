@@ -1,0 +1,75 @@
+{{#each alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{this}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/each}}
+
+
+
+
+{{!-- <div id="bg"></div> --}}
+{{!-- <form>
+
+  <div class="rform-field">
+    <input type="name" placeholder="full name" required />
+  </div>
+
+  <div class="rform-field">
+    <input type="email" placeholder="email" required />
+  </div>
+
+  <div class="rform-field">
+    <input type="contact" placeholder="contact" required />
+  </div>
+
+  <div class="rform-field">
+    <input type="password" placeholder="Password" required />
+  </div>
+
+  <div class="rform-field">
+    <input type="password" placeholder="confirm-Password" required />
+  </div>
+
+  <div class="rform-field">
+    <button class="btn" type="submit">register</button>
+  </div>
+
+</form> --}}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col d-flex d-inline-flex flex-wrap justify-content-center align-items-center">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Registration</h2>
+          <p class="card-text d-flex justify-content-center">Please provide data for registration</p>
+          <form action="/register" method="post">
+            <div class="form-group">
+              <input type="text" class="form-control" name="name" id="name" placeholder="name">
+            </div>
+            <div class="form-group mt-2">
+              <input type="email" class="form-control" name="email" id="email" placeholder="email">
+            </div>
+            <div class="form-group mt-2">
+              <input type="contact" class="form-control" name="contact" id="contact" placeholder="contact">
+            </div>
+            <div class="form-group mt-2">
+              <input type="password" class="form-control" name="password" id="password" placeholder="password">
+            </div>
+            <div class="form-group mt-2">
+              <input type="confirmPassword" class="form-control" name="confirmPassword" id="confirmPassword"
+                placeholder="confirmPassword">
+            </div>
+            <button type="submit" class="btn btn-danger mt-3">Register</button>
+            <a href="/login" type="submit" class="btn btn-danger mt-3">Back to Login</a>
+            <div class="mt-2">
+              <a href="#" class="btn btn-primary mt3"><i class='bx bxl-google'></i> &nbsp Google</a>
+              <a href="#" class="btn btn-success mt3"><i class='bx bxl-spotify'></i> &nbsp spotify</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

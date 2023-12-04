@@ -1,0 +1,91 @@
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col d-flex d-inline-flex flex-wrap justify-content-center align-items-center">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Registration</h2>
+                    <p class="card-text d-flex justify-content-center">Please provide data for registration</p>
+
+                    <form action="/register" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="first_name" id="first_name"
+                                placeholder="first_name">
+                            {{#if err.first_name}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.first_name}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="last_name" id="last_name"
+                                placeholder="last_name">
+                            {{#if err.last_name}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.last_name}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="email">
+                            {{#if err.email}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.email}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="password" class="form-control" name="password" id="password"
+                                placeholder="password">
+                            {{#if err.password}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.password}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="confirmPassword" class="form-control" name="confirmPassword"
+                                id="confirmPassword" placeholder="confirmPassword">
+                            {{#if err.confirmPassword}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.confirmPassword}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" class="form-control" name="address" id="address" placeholder="address">
+                            {{#if err.address}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.address}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" class="form-control" name="city" id="city" placeholder="city">
+                            {{#if err.city}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.city}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" class="form-control" name="state" id="state" placeholder="state">
+                            {{#if err.state}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.state}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="number" class="form-control" name="zip" id="zip" placeholder="zip">
+                            {{#if err.zip}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.zip}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="tel" class="form-control" name="phone" id="phone"
+                                placeholder="phone">
+                            {{#if err.phone}}
+                            <p style="color: red; margin: 0; padding: 0">{{err.phone}}</p>
+                            {{/if}}
+                        </div>
+                        <button type="submit" class="btn btn-danger mt-3">Register</button>
+                        <a href="/login" type="button" class="btn btn-danger mt-3">Back to Login</a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

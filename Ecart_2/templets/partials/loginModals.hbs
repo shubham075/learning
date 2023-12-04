@@ -1,0 +1,28 @@
+<div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-body">
+        <form action="/login" method="post">
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+                {{#if err.email}}
+                <p style="color: red; margin: 0; padding: 0">{{err.email}}</p>
+                {{/if}}
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+                {{#if err.password}}
+                <p style="color: red; margin: 0; padding: 0">{{err.password}}</p>
+                {{/if}}
+            </div>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary" type="submit">LOGIN</button>
+    </div>
+
+</div>

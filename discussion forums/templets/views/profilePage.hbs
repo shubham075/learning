@@ -1,0 +1,274 @@
+{{#if user_data}}
+
+{{>header_one}}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-7 d-flex align-items-center" style="background-color: whitesmoke;">
+
+            <img src={{user_data.avtarImage}} alt="User" class="rounded-circle p-3 mt-4" style="height: 30vh;">
+            <div class="ms-4">
+                <h4 class="fa-solid">{{user_data.name}}</h4>
+
+                <div class="p-1">
+                    <a href="#" class="fa-solid fa-xs">Add profile credentials</a>
+                </div>
+                <div class="p-1 fa-solid fa-sm">
+                    <a href="#" class="">0 - followers</a> &nbsp;
+                    <a href="#" class="">0 - following</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4 " style="background-color: whitesmoke;">
+            <div class="fa-solid mt-3 p-2">
+                Credentials & Highlights
+            </div>
+            <hr>
+            <div class="mt-3 p-1">
+                <a href="#" class="" data-bs-toggle="modal" data-bs-target="#employmentModal">
+                    <i class="fa-solid fa-briefcase fa-sm">&nbsp; Add employment credential</i>
+                </a>
+
+                <!-- Modal -->
+                <div class="modal fade" id="employmentModal" tabindex="-1" aria-labelledby="employmentModal"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <h5 class="modal-title" id="exampleModalLabel">Edit credentials</h5>
+                                    <small>Credentials add credibility to your content</small>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                </button>
+                            </div>
+                            <div class="modal-body p-2">
+
+                                {{!-- employment form starts here --}}
+                                <form action="/empData/save/{{user_data.id}}" method="post"
+                                    id="employment_credentials_data">
+                                    <div class="form-outline mb-3">
+                                        <input type="text" id="position" name="position" class="form-control" />
+                                        <label class="form-label" for="position">Position</label>
+                                    </div>
+
+                                    <div class="form-outline mb-3">
+                                        <input type="text" id="company_name" name="company_name" class="form-control" />
+                                        <label class="form-label" for="company_name">Company/Organization</label>
+                                    </div>
+
+                                    <div class="form-outline mb-3">
+                                        <label class="form-label" for="year_picker1">Start Year</label>
+                                        <select id="year_picker1" name="start_year" class="form-select">
+                                            <option value="">--Select Year--</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-outline mb-3">
+                                        <label class="form-label" for="year_picker2">End Year</label>
+                                        <select id="year_picker2" name="end_year" class="form-select">
+                                            <option value="">--Select Year--</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" name="is_currently_work_here"
+                                            value='true' id="is_currently_work_here" />
+                                        <label class="form-check-label" for="is_currently_work_here">
+                                            I currently work here
+                                        </label>
+                                    </div>
+
+                                    <div class="modal-footer mb-3">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" id="emp_form_submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 p-1">
+                <a href="#" class="" data-bs-toggle="modal" data-bs-target="#educationModel">
+                    <i class="fa-sharp fa-solid fa-graduation-cap fa-sm">&nbsp; Add education credential</i>
+                </a>
+
+                <!-- Modal -->
+                <div class="modal fade" id="educationModel" tabindex="-1" aria-labelledby="educationModel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <h5 class="modal-title" id="exampleModalLabel">Edit credentials</h5>
+                                    <small>Credentials add credibility to your content</small>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                </button>
+                            </div>
+                            <div class="modal-body p-2">
+                                {{!-- education form started here --}}
+                                <form action="/eduData/save/{{user_data.id}}" method="post"
+                                    id="education_credentials_data">
+                                    <div class="form-outline mb-3">
+                                        <input type="text" id="school" name="school" class="form-control" />
+                                        <label class="form-label" for="school">School</label>
+                                    </div>
+                                    <div class="form-outline mb-3">
+                                        <input type="text" id="primary_major" name="primary_major"
+                                            class="form-control" />
+                                        <label class="form-label" for="primary_major">Primary Major</label>
+                                    </div>
+                                    <div class="form-outline mb-3">
+                                        <input type="text" id="secondary_major" name="secondary_major"
+                                            class="form-control" />
+                                        <label class="form-label" for="secondary_major">Secondary Major</label>
+                                    </div>
+                                    <div class="form-outline mb-3">
+                                        <input type="text" id="degree_type" name="degree_type" class="form-control" />
+                                        <label class="form-label" for="degree_type">Degree type</label>
+                                    </div>
+                                    <div class="form-outline mb-3">
+                                        <label class="form-label" for="year_picker3">Graduation year</label>
+                                        <select name="graduation_year" id="year_picker3" class="form-select">
+                                            <option value="">--Select Year--</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="modal-footer mb-3">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary" id="edu_form_submit">Save</button>
+                                    </div>
+
+                                </form>
+                                {{!-- educatioon form ends here --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 p-1">
+                <a href="#" class="" data-bs-toggle="modal" data-bs-target="#locationModel">
+                    <i class="fa-solid fa-location-dot fa-sm">&nbsp; Add location credential</i>
+                </a>
+
+                <!-- Modal -->
+                <div class="modal fade" id="locationModel" tabindex="-1" aria-labelledby="locationModel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <h5 class="modal-title" id="exampleModalLabel">Edit credentials</h5>
+                                    <small>Credentials add credibility to your content</small>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                </button>
+                            </div>
+                            <div class="modal-body p-2">
+                                {{!-- location form starts here --}}
+                                <form action="/locationData/save/{{user_data.id}}" method="post"
+                                    id="location_credentials_data">
+                                    <div class="form-outline mb-3">
+                                        <input type="text" id="location" name="location" class="form-control" />
+                                        <label class="form-label" for="location">Location (required)</label>
+                                    </div>
+                                    <div class="form-outline mb-3">
+                                        <input type="number" id="start_year" name="start_year" class="form-control" />
+                                        <label class="form-label" for="start_year">Start Year</label>
+                                    </div>
+                                    <div class="form-outline mb-3">
+                                        <input type="number" id="end_year" name="end_year" class="form-control" />
+                                        <label class="form-label" for="end_year">End Year</label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="is_currently_live_here" />
+                                        <label class="form-check-label" for="is_currently_live_here">
+                                            I currently live here
+                                        </label>
+                                    </div>
+                                    <div class="modal-footer mb-3">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary" id="loc_form_submit">Save</button>
+                                    </div>
+                                </form>
+                                {{!-- location form ends here --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+
+
+    <script>
+        const current_year = new Date().getFullYear();
+        const select_element1 = document.getElementById('year_picker1');
+        const select_element2 = document.getElementById('year_picker2');
+        const select_element3 = document.getElementById('year_picker3');
+
+        for (let i = current_year; i >= current_year - 20; i--) {
+            const option_element = document.createElement('option');
+            option_element.value = i;
+            option_element.textContent = i;
+            select_element1.appendChild(option_element);
+        }
+        for (let i = current_year; i >= current_year - 10; i--) {
+            const option_element = document.createElement('option');
+            option_element.value = i;
+            option_element.textContent = i;
+            select_element2.appendChild(option_element);
+        }
+        for (let i = current_year; i >= current_year - 10; i--) {
+            const option_element = document.createElement('option');
+            option_element.value = i;
+            option_element.textContent = i;
+            select_element3.appendChild(option_element);
+        }
+
+        document.getElementById('emp_form_submit').addEventListener('click', (attr) => {
+            attr.preventDefault();
+            Swal.fire({
+                title: 'Success!',
+                text: 'Your form has been submitted.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then((sucess) => {
+                document.getElementById('employment_credentials_data').submit();
+            })
+        });
+        document.getElementById('loc_form_submit').addEventListener('click', (attr) => {
+            attr.preventDefault();
+            Swal.fire({
+                title: 'Success!',
+                text: 'Your form has been submitted.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then((sucess) => {
+                document.getElementById('location_credentials_data').submit();
+            })
+        });
+        document.getElementById('edu_form_submit').addEventListener('click', (attr) => {
+            attr.preventDefault();
+            Swal.fire({
+                title: 'Success!',
+                text: 'Your form has been submitted.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then((sucess) => {
+                document.getElementById('education_credentials_data').submit();
+            })
+        });
+
+    </script>

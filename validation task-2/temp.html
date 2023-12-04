@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Form Validation</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="temp.css">
+    <!-- <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  body{
+    background: wheat;
+  }
+  
+  .form-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 2px; 
+  }
+
+  .form-box .form-design{
+    margin-bottom: 10px;
+  }
+  .form-error{
+    margin-bottom: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+  }
+  .input-box{
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .btn{
+    border: 0px;
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    background: #fece0c;
+    color: #332902;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+    </style> -->
+    
+
+</head>
+
+<body>
+
+    <div class="form-box">
+        <!-- <div class="form-error"></div> -->
+        <form name="reg-form" onsubmit="return formValidation()">
+        <!-- <form name="reg-form"> -->
+            <div class="formdesign" id="name">
+                <input type="text" name="fname" class="input-box" placeholder="Name"><b><span class="formerror">
+                    </span></b>
+            </div>
+
+            <div class="formdesign" id="contact">
+                <input type="tel" name="fcontact" class="input-box mt-3" placeholder="Conatct No."><b><span
+                        class="formerror"></span></b>
+            </div>
+
+            <div class="formdesign" id="email">
+                <input type="email" name="femail" class="input-box mt-3" placeholder="Email"><b><span class="formerror">
+                    </span></b>
+            </div>
+
+            <div class="formdesign" id="password">
+                <input type="password" name="fpassword" class="input-box mt-3" placeholder="Password"><b><span
+                        class="formerror"></span></b>
+            </div>
+
+            <div class="formdesign" id="confirm-password">
+                <input type="password" name="fconfirm-password" class="input-box mt-3"
+                    placeholder="Confirm-Password"><b><span class="formerror"></span></b>
+            </div>
+
+            <input class="btn" type="submit" value="Submit" name="button" onclick="getData()">
+            <!-- <input class="btn" type="submit" value="Submit" name="button"> -->
+
+        </form>
+    </div>
+</body>
+<!-- <script src="bundle.js"></script> -->
+<script src="form.js"></script>
+<!-- <script src="temp.js"></script> -->
+<!-- <script>
+    let fs = require('fs');
+
+let Name = document.forms['reg-form']['fname'].value;
+let contact = document.forms['reg-form']['fcontact'].value;
+let email = document.forms['reg-form']['femail'].value;
+
+let data = {}
+
+
+function clearMsg() {
+    errors = document.getElementsByClassName('formerror');
+    for (let items of errors) {
+        items.innerHTML = "";
+    }
+}
+
+function setErrorMsg(id, error) {
+    ele = document.getElementById(id);
+    ele.getElementsByClassName('formerror')[0].innerHTML = error;
+}
+
+function formValidation() {
+    let state = true;
+    clearMsg();
+    // let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    Name = document.forms['reg-form']['fname'].value;
+    if (Name.length == 0 || Name.length < 6) {
+        setErrorMsg("name", "input data is not valid!");
+        state = false;
+    }
+
+    contact = document.forms['reg-form']['fcontact'].value;
+    if (isNaN(contact) || contact.length != 10) {
+        setErrorMsg("contact", "invalid contact number!");
+        state = false;
+    }
+
+    email = document.forms['reg-form']['femail'].value;
+    if (email.length < 10) {
+        setErrorMsg("email", "Email id is too short!");
+        state = false;
+    }
+
+
+    let pass = document.forms['reg-form']['fpassword'].value;
+    if (pass.length < 6) {
+        setErrorMsg("password", "too short or worng password!");
+        state = false;
+    }
+
+    let confirmPass = document.forms['reg-form']['fconfirm-password'].value;
+    if (confirmPass != pass) {
+        setErrorMsg("confirm-password", "Password not matched!");
+        state = false;
+    }
+
+    return state;
+}
+
+function getData() {
+    data = {
+        "email":document.forms['reg-form']['femail'].value ,
+        "phone":document.forms['reg-form']['fcontact'].value 
+    }
+    const strJson = JSON.stringify(data);
+    if (formValidation() == true) {
+        localStorage.setItem(`${Name} --info`, strJson);
+        fs.writeFileSync('temp.json', strJson);
+    }
+    console.log(strJson);
+    // document.write(strJson);
+    // return strJson;
+}
+
+// function writeJson() {
+//     if (formValidation() == true) {
+//         data = {
+//             "email": email,
+//             "phone": contact
+//         }
+//         let jsonData=JSON.stringify(data);
+//         fs.writeFileSync('temp.json', jsonData);
+//     }
+// }
+// writeJson();
+
+
+
+</script> -->
+
+
+
+
+</html>

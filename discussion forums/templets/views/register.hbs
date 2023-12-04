@@ -1,0 +1,130 @@
+
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="container-fluid" style="background-color: #508bfc;">
+    <div style="height: 10vh;"></div>
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-4">
+            <section class="vh-100">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="p-5">
+                        <h3 class="mb-5 text-center">Sign in</h3>
+
+                        <form action="/register" method="post" novalidate>
+
+                            <div class="text-center mb-3">
+                                <p>Sign up with:</p>
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-link btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                            </div>
+
+                            <p class="text-center">OR</p>
+
+                            <!-- Name input -->
+                            <!--<div class="mb-3">
+                                <div class="form-outline">
+                                    <input type="text" id="registerName" name="name" class="form-control" />
+                                    <label class="form-label" for="registerName">Name</label>
+                                </div>
+                                {{#if err.name}}
+                                <p style="color: red; margin: 0; padding: 0">{{err.name}}</p>
+                                {{/if}}
+                            </div>
+                            -->
+
+                            <!-- Username input -->
+                            <div class="mb-3">
+                                <div class="form-outline">
+                                    <input type="text" id="registerUsername" name="username" class="form-control" />
+                                    <label class="form-label" for="registerUsername">Username</label>
+                                </div>
+                                {{#if err.username}}
+                                <p style="color: red; margin: 0; padding: 0">{{err.username}}</p>
+                                {{/if}}
+                            </div>
+
+
+                            <!-- Email input -->
+                            <div class="mb-3">
+                                <div class="form-outline">
+                                    <input type="email" id="registerEmail" name="email" class="form-control" />
+                                    <label class="form-label" for="registerEmail">Email</label>
+                                </div>
+                                {{#if err.email}}
+                                <p style="color: red; margin: 0; padding: 0">{{err.email}}</p>
+                                {{/if}}
+                            </div>
+
+
+                            <!-- Password input -->
+                            <div class="mb-3">
+                                <div class="form-outline">
+                                    <input type="password" id="registerPassword" name="password" class="form-control" />
+                                    <label class="form-label" for="registerPassword">Password</label>
+                                </div>
+                                {{#if err.password}}
+                                <p style="color: red; margin: 0; padding: 0">{{err.password}}</p>
+                                {{/if}}
+                            </div>
+
+
+                            <!-- Repeat Password input -->
+                            <div class="mb-3">
+                                <div class="form-outline">
+                                    <input type="password" id="registerRepeatPassword" name="r_password"
+                                        class="form-control" />
+                                    <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+                                </div>
+                                {{#if err.r_password}}
+                                <p style="color: red; margin: 0; padding: 0">{{err.r_password}}</p>
+                                {{/if}}
+                            </div>
+
+
+                            <!-- Checkbox -->
+                            <div class="mb-3">
+                                <div class="form-check d-flex justify-content-center">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck"
+                                        checked aria-describedby="registerCheckHelpText" />
+                                    <label class="form-check-label" for="registerCheck">
+                                        I have read and agree to the terms
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
+                        </form>
+
+                        <p class="text-center" style="color: #393f81;">
+                            Have an account?
+                            <a href="/login" style="color: #393f81;">
+                                Login here
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

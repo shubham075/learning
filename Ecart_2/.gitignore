@@ -1,0 +1,9 @@
+package-lock.json
+node_modules
+.env
+temporary.js
+temp2.js
+tempdata
+config
+.sequelizerc
+temp3.js

@@ -1,0 +1,74 @@
+const express = require('express');
+const data = require('./list.js');
+
+let app = express();
+// app.use(express.urlencoded({ extended:true }));
+app.use(express.json());
+
+app.listen(3000, ()=>{
+    console.log("Srever works fine on port 3000");
+});
+
+app.get('/api/data', (req, res)=>{
+    res.json(data);
+});
+
+app.post('/api/data', (req, res)=>{
+
+    if(!req.body.email){
+        res.status(404);
+        return res.json({"message":"Email is required"});
+    }
+    let user={
+        id : data.length+1,
+        name : req.body.name,
+        contact : req.body.contact,
+        email : req.body.email
+    }
+    data.push(user);
+    res.json(user);
+});
+
+app.put('/api/data/:id', (req, res)=>{
+    let id = req.params.id;
+    let Name = req.body.name;
+    let contact = req.body.contact;
+    let email = req.body.email;
+
+    let index = data.findIndex((student)=>{
+        return (student.id == Number.parseInt(id));
+    });
+
+    if(index >= 0){
+        let temp = data[index];
+        temp.Name = Name;
+        temp.contact = contact;
+        temp.email = email;
+        res.json(temp);
+    }
+    else{
+        res.status(404);
+        res.send();
+    }
+});
+
+app.delete('/api/data/:id',(req, res)=>{
+    let id = req.params.id;
+
+    let index = data.findIndex((student)=>{
+        return (student.id == Number.parseInt(id));
+    });
+
+    if (index >= 0){
+        let std = data[index];
+        data.splice(index,1);
+        res.send(std);
+    }
+    else{
+        res.status(404);
+        res.send();
+    }
+});  
+
+
+

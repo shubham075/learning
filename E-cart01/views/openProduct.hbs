@@ -1,0 +1,227 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light pt-0 pb-0">
+    <div class="container d-flex justify-content-start">
+        <a class="navbar-brand" href="/home">
+            <img src="https://freshcart.codescandy.com/assets/images/logo/freshcart-logo.svg" alt="" width="300"
+                height="50" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex">
+                <input class="form-control rounded-3 me-2" style="width: 50rem;" type="search" placeholder="Search">
+                <button class="btn btn-success me-5" type="submit" style="width: 3rem;">
+                    <i class='bx bx-search-alt bx-tada'></i></button>
+            </form>
+            <div class="dropdown">
+                <button class="btn btn-success me-3" data-bs-toggle="dropdown" style="width: 3rem;">
+                    <i class='bx bx-user'></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a href="/demoCart" class="dropdown-item">Cart</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                </ul>
+            </div>
+            <a href="/logout" class="btn btn-success" style="width: 3rem;">
+                <i class='bx bx-log-out bx-flip-vertical'></i>
+            </a>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container d-flex justify-content-start mt-3 collapse navbar-collapse">
+    <div class="dropdown">
+
+        <a class="btn btn-success px-6 me-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="true" style="width: 12rem;">
+            <span class="me-1">
+                <i class='bx bx-category'></i>
+            </span> All Departments
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Fruits & vegetables</a></li>
+            <li><a class="dropdown-item" href="#">Dairy Products</a></li>
+            <li><a class="dropdown-item" href="#">Meat products</a></li>
+        </ul>
+
+        <a class="btn" href="#" role="button" style="width: 5rem;"> Home </a>
+
+        <a class="btn " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 6rem;">
+            Stores
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Store 1</a></li>
+            <li><a class="dropdown-item" href="#">Store 2</a></li>
+            <li><a class="dropdown-item" href="#">Store 3</a></li>
+            <li><a class="dropdown-item" href="#">Store 4</a></li>
+        </ul>
+
+        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 6rem;">
+            Accounts
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">Tommorow</a></li>
+            <li><a class="dropdown-item" href="#">Last week</a></li>
+            <li><a class="dropdown-item" href="#">Last month</a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <hr style="width: 98vw;">
+</div>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Your Cart</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        {{!-- <p>Try scrolling the rest of the page to see this option in action.</p> --}}
+        <ul class="list-group list-group-flush">
+            <!-- list group -->
+            {{!-- {{#each storage}} --}}
+            <li class="list-group-item ps-0 border-top">
+                <div class="row align-items-center">
+                    <div class="col-3 col-md-2">
+                        <img src="https://www.bigbasket.com/media/uploads/p/l/20005539_3-heritage-toned-milk-special.jpg"
+                            alt="Ecommerce" class="img-fluid">
+                    </div>
+                    <div class="col-4 col-md-6 col-lg-5">
+                        <!-- title -->
+                        <a href="#" class="text-inherit">
+                            <h6 class="mb-0">productName</h6>
+                        </a>
+                        <span><small class="text-muted">productSize</small></span>
+                        <!-- text -->
+                        {{!-- remove txt --}}
+                        <div class="mt-2 small lh-1">
+                            <a href="#!" class="text-decoration-none text-inherit">
+                                <span class="me-1 align-text-bottom">delIco
+                                </span>
+                                <span class="text-muted">Remove</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- input group -->
+                    <div class="col-3 col-md-3 col-lg-3">
+                        <!-- input -->
+                        <div class="input-group d-flex gap-1">
+                            <button type="button" class="btn btn-sm btn-outline-success" id="minus">-</button>
+                            <span class="" style="width: 5vw;">
+                                <input type="number" class="form-control" name="quantity" id="quant" value="1">
+                            </span>
+                            <button type="button" class="btn btn-sm btn-outline-success" id="plus">+</button>
+                        </div>
+
+                    </div>
+                    <!-- price -->
+                    <div class="col-2 text-lg-end text-start text-md-end col-md-2">
+                        <span class="fw-bold">productPrice</span>
+
+                    </div>
+                </div>
+            </li>
+            {{!-- {{/each}} --}}
+        </ul>
+    </div>
+</div>
+
+
+<section class="mt-8">
+    {{#each data}}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{this.productImage}}" class="d-block w-100" style="height: 60vh;"
+                                alt="{{this.productName}}">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{this.productImage}}" class="d-block w-100" style="height: 60vh;"
+                                alt="{{this.productName}}">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{this.productImage}}" class="d-block w-100" style="height: 60vh;"
+                                alt="{{this.productName}}">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls1"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselControls1"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="ps-md-5">
+                    <a href="/home/{{this.productCategory}}" style="text-decoration: none;"
+                        class="mb-4 d-block">{{this.productCategory}}
+                        Products</a>
+                    <h1 class="mb-1">{{this.productName}}</h1>
+
+                    <div class="fs-4">
+                        <span class="fw-bold text-dark"><i class='bx bx-rupee'></i> {{this.productPrice}}</span>
+                        <small class="fs-6 ms-2 text-danger">{{this.discountValue}}% off</small>
+                    </div>
+                    <hr class="my-6">
+                    <menu class="mb-5 p-0 d-flex gap-2" style="list-style:none;">
+                        <li><button type="menu" class="btn btn-outline-secondary">250g</button></li>
+                        <li><button type="button" class="btn btn-outline-secondary">500g</button></li>
+                        <li><button type="button" class="btn btn-outline-secondary">1kg</button></li>
+                    </menu>
+
+                    <div class="input-group d-flex gap-1">
+                        <button type="button" class="btn btn-outline-success" id="minus">-</button>
+                        <span class="" style="width: 5vw;">
+                            <input type="number" class="form-control" name="quantity" id="quant" value="1">
+                        </span>
+                        <button type="button" class="btn btn-outline-success" id="plus">+</button>
+                    </div>
+                    <div class="row mt-4 d-flex g-2 align-items-center justify-content-start">
+                        <div class="col-md-4 d-grid">
+                            <a href="/addToCart/{{this.productCategory}}/{{this.id}}" type="button"
+                                class="btn btn-lg btn-success">
+                                <i class='bx bxs-cart-add'></i> &nbsp; Add to cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</section>
+
+
+<script>
+    let minus = document.getElementById("minus");
+    let plus = document.getElementById("plus");
+    let quant = document.getElementById("quant");
+
+    minus.addEventListener('click', () => {
+        if (quant.value > 0) {
+            quant.value--;
+        }
+    });
+    plus.addEventListener('click', () => {
+        quant.value++;
+    });
+
+</script>

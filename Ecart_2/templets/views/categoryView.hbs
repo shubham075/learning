@@ -1,0 +1,15 @@
+{{>header}}
+
+<div class="container mt-5">
+    <h3 class="mb-0">Featured Categories</h3>
+    <div class="d-flex flex-md-row justify-content-between mt-5">
+        {{#each data}}
+        <div class="btn-group" role="group" aria-label="Basic example" style="width: 100%;">
+            <a href="/category/{{this.id}}" type="button" class="btn border me-4"><img src={{this.image}}
+                    alt="Grocery Ecommerce Template" class="mb-3" height="150vh">
+                <p>{{this.name}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</div>

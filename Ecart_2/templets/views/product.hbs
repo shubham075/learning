@@ -1,0 +1,129 @@
+{{>header}}
+
+<section class="mt-8">
+
+    {{#each data}}
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{this.image}}" class="d-block w-100" style="height: 60vh;" alt="{{this.name}}">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{this.image}}" class="d-block w-100" style="height: 60vh;" alt="{{this.name}}">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{this.image}}" class="d-block w-100" style="height: 60vh;" alt="{{this.name}}">
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls1"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselControls1"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="ps-md-5">
+                    {{!-- <a href="#" style="text-decoration: none;" class="mb-4 d-block">{{this.productCategory}}
+                        Products</a> --}}
+                    <h1 class="mb-1">{{this.name}}</h1>
+
+                    <div class="fs-4">
+                        <span class="fw-bold text-dark"><i class='bx bx-rupee'></i>
+                            <span class="text-dark" id="product_price">{{productData.[0].price}}</span>
+                            {{!-- <span class="text-dark">{{this.finalPrice}}</span> --}}
+                        </span>
+                        <small class="fs-6 ms-2 text-danger">5% off</small>
+                    </div>
+                    <hr class="my-6">
+                    <menu class="mb-5 p-0 d-flex gap-2" style="list-style:none;">
+                        {{#each this.productData}}
+                        <li><button type="menu" class="btn btn-outline-secondary" id="product_size"
+                                onclick="loadPrice({{this.id}}, '{{this.size}}', {{this.price}})">{{this.size}} --
+                                {{this.id}}</button></li>
+                        {{/each}}
+                    </menu>
+                    <div class="input-group d-flex gap-1">
+                        <button type="button" class="btn btn-outline-success" id="minus">-</button>
+                        <span class="" style="width: 5vw;">
+                            <input type="number" class="form-control" name="quantity" id="quant" value="1">
+                        </span>
+                        <button type="button" class="btn btn-outline-success" id="plus">+</button>
+                    </div>
+                    <div class="row mt-4 d-flex g-2 align-items-center justify-content-start">
+                        <div class="col-md-4 d-grid">
+                            {{!-- <a href="/users/addtocart/{{this.id}}" type="button"
+                                class="btn btn-lg btn-success">--}}
+                                <button type="button" class="btn btn-lg btn-success" onclick="addToCart()">
+                                    <i class='bx bxs-cart-add'></i> &nbsp; Add to cart
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{/each}}
+
+
+</section>
+
+
+<script>
+    let product_details = {{{ json data }}}
+    //console.log('product ID :',product_details[0].id)
+    //console.log('default selcted product_data :', product_details[0].productData[0]);
+    let selected_product = {
+        productID: product_details[0].id,
+        data_ID: product_details[0].productData[0].id,
+        price: product_details[0].productData[0].price,
+        size: product_details[0].productData[0].size
+    };
+    console.log('default selcted product_data :', selected_product);
+
+    function loadPrice(ID, size, price) {
+        let price_column = document.getElementById('product_price');
+        price_column.innerHTML = price;
+
+        selected_product.data_ID = ID;
+        selected_product.price = price;
+        selected_product.size = size;
+    }
+
+    async function addToCart() {
+        let quantity = document.getElementById('quant').value;
+        console.log();
+        selected_product.quantity = quantity;
+        console.log('selected_product data :', selected_product);
+        let response = await axios.post('/add-to-cart', { selected_product });
+        console.log(response);
+    }
+
+    let minus = document.getElementById("minus");
+    let plus = document.getElementById("plus");
+    let quant = document.getElementById("quant");
+
+    minus.addEventListener('click', () => {
+        if (quant.value > 0) {
+            quant.value--;
+        }
+    });
+    plus.addEventListener('click', () => {
+        quant.value++;
+    });
+
+</script>
